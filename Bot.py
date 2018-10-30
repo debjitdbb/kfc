@@ -1,7 +1,9 @@
 import discord
+import os
 from discord.ext.commands import Bot
 from discord.ext import commands
 import asyncio
+import os
 
 Client = discord.Client()
 client = commands.Bot(command_prefix = "!")
@@ -24,7 +26,7 @@ async def on_message(message):
 
 
 
-bot.run(os.getenv('TOKEN'))
+client.run(os.getenv('TOKEN'))
 
 
 
