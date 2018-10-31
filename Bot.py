@@ -9,8 +9,6 @@ Client = discord.Client()
 client = commands.Bot(command_prefix = "!")
 
 
-async def on_ready():
-	print("Bot starts")
 
 @client.event
 async def on_message(message):
