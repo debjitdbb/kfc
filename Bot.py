@@ -12,15 +12,19 @@ client = commands.Bot(command_prefix = "!")
 
 @client.event
 async def on_message(message):
+	member = message.author
+	user = client.get_user(member.id)
 	if message.content == "cookie":
-		await client.send_message(message.channel, ":cookie:")
+		await member.dm_channel.send(":cookie:")
+	elif message.content == "hari":
+		await member.dm_channel.send("<:hari:505608378656096256>")
 	elif message.content == "frown":
-		await client.send_message(message.channel, ":frowning:")
+		await member.dm_channel.send(":frowning:")
 	elif message.content == "love":
-		await client.send_message(message.channel, ":cold_sweat:")
+		await member.dm_channel.send(":cold_sweat:")
 	elif message.content.startswith("!say "):
 		args = message.content.split(" ")
-		await client.send_message(message.channel, " ".join(args[1:]))
+		await member.dm_channel.send(" ".join(args[1:]))
 
 
 
