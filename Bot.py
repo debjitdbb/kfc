@@ -15,16 +15,16 @@ async def on_message(message):
 	member = message.author
 	user = client.get_user(member.id)
 	if message.content == "cookie":
-		await member.dm_channel.send(":cookie:")
+		await message.channel.send(":cookie:")
 	elif message.content == "hari":
-		await member.dm_channel.send("<:hari:505608378656096256>")
+		await message.channel.send("<:hari:505608378656096256>")
 	elif message.content == "frown":
-		await member.dm_channel.send(":frowning:")
+		await message.channel.send(":frowning:")
 	elif message.content == "love":
-		await member.dm_channel.send(":cold_sweat:")
+		await message.channel.send(":cold_sweat:")
 	elif message.content.startswith("!say "):
 		args = message.content.split(" ")
-		await member.dm_channel.send(" ".join(args[1:]))
+		await message.channel.send(" ".join(args[1:]))
 
 
 
