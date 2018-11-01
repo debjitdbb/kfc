@@ -31,7 +31,25 @@ async def on_message(message):
 	elif message.content.startswith("!say "):
 		args = message.content.split(" ")
 		await message.channel.send(" ".join(args[1:]))
+	elif message.content == "!call":
+		str = callSquad(member)
+		await message.channel.send(str)
 
+
+def callSquad(member):
+	s = ""
+	flag = False
+	squad = [466270095497363496,428543156242481152,455039811791749130,463002393617891338,430425824118833162]
+	for i in squad:
+		# print(i)
+		if member.id == i:
+			flag = True
+			continue
+		s = s + "<@" + str(i) + "> "
+	if flag == False:
+		return "You are not authorised to execute this command..."
+	s = s + "Let's have chicken dinner..."
+	return s
 
 
 client.run(os.getenv('TOKEN'))
