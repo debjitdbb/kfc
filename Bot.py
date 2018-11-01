@@ -23,7 +23,7 @@ async def on_message(message):
 	if message.content == "cookie":
 		await message.channel.send(":cookie:")
 	elif message.content == "hari":
-		await message.channel.send("<:hari:505608378656096256>")
+		await message.channel.send("<:hari:506923677225320468>")
 	elif message.content == "frown":
 		await message.channel.send(":frowning:")
 	elif message.content == "love":
