@@ -9,6 +9,12 @@ Client = discord.Client()
 client = commands.Bot(command_prefix = "!")
 
 
+@client.event
+async def on_ready():
+	game = discord.Game(name = "in Erangel")
+	await client.change_presence(status=discord.Status.idle, activity=game)
+
+
 
 @client.event
 async def on_message(message):
