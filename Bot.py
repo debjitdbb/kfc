@@ -34,6 +34,29 @@ async def on_message(message):
 	elif message.content == "!call":
 		str = callSquad(member)
 		await message.channel.send(str)
+	elif message.content == "!allmembers":
+		x = message.guild.members
+		for m in x:
+			if m.bot:
+				continue
+			await message.channel.send(m.name)
+	elif message.content == "!allbots":
+		x = message.guild.members
+		for m in x:
+			if m.bot:
+				await message.channel.send(m.name)
+	elif message.content == "!memberstats":
+		x = message.guild.members
+		a = 0
+		b = 0
+		for m in x:
+			if m.bot:
+				b = b + 1
+			else:
+				a = a + 1
+		await message.channel.send("Total strength "+ str(a+b))
+		await message.channel.send("Members "+ str(a))
+		await message.channel.send("Bots "+ str(b))
 
 
 def callSquad(member):
