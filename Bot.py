@@ -37,15 +37,20 @@ async def on_message(message):
 		await message.channel.send(st)
 	elif message.content == "!allmembers":
 		x = message.guild.members
+		s = ""
 		for m in x:
 			if m.bot:
 				continue
-			await message.channel.send(m.name)
+			s = s + "\n" + m.name
+		await message.channel.send(s)
 	elif message.content == "!allbots":
 		x = message.guild.members
+		s = ""
 		for m in x:
 			if m.bot:
-				await message.channel.send(m.name)
+				s = s + "\n" + m.name
+		await message.channel.send(s)
+
 	elif message.content == "!memberstats":
 		x = message.guild.members
 		a = 0
@@ -55,9 +60,11 @@ async def on_message(message):
 				b = b + 1
 			else:
 				a = a + 1
-		await message.channel.send("Total strength "+ str(a+b))
-		await message.channel.send("Members "+ str(a))
-		await message.channel.send("Bots "+ str(b))
+		s = ""
+		s = s + "Total strength " + +"\n" + str(a+b) + "Members "+ str(a) + "\n" + "Bots "+ str(b)
+		await message.channel.send(s)
+
+
 
 def randomize():
 	st = ["Let's have chicken dinner...", "Let's go...", "The opportunity of defeating the enemy is provided by the enemy himself...", "Gather around...", "Stay alert...", "Charge...", "There can only be one WINNER..."]
