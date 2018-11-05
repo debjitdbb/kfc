@@ -37,7 +37,7 @@ async def on_message(message):
 		await message.channel.send(st)
 	elif message.content == "!allmembers":
 		x = message.guild.members
-		s = ""
+		s = "\n"
 		for m in x:
 			if m.bot:
 				continue
@@ -45,7 +45,7 @@ async def on_message(message):
 		await message.channel.send(s)
 	elif message.content == "!allbots":
 		x = message.guild.members
-		s = ""
+		s = "\n"
 		for m in x:
 			if m.bot:
 				s = s + "\n" + m.name
@@ -60,8 +60,8 @@ async def on_message(message):
 				b = b + 1
 			else:
 				a = a + 1
-		s = ""
-		s = s + "Total strength " + +"\n" + str(a+b) + "Members "+ str(a) + "\n" + "Bots "+ str(b)
+		s = "\n"
+		s = s + "Total strength " + "\n" + str(a+b) + "Members " + str(a) + "\n" + "Bots " + str(b)
 		await message.channel.send(s)
 
 
