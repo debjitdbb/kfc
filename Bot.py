@@ -60,7 +60,7 @@ async def on_message(message):
 		await message.channel.send("Bots "+ str(b))
 
 def randomize():
-	st = ["Let's have chicken dinner...", "Let's go...", "The opportunity of defeating the enemy is provided by the enemy himself...", "Gather around...", "Stay alert..."]
+	st = ["Let's have chicken dinner...", "Let's go...", "The opportunity of defeating the enemy is provided by the enemy himself...", "Gather around...", "Stay alert...", "Charge...", "There can only be one WINNER..."]
 	n = random.randint(0,len(st)-1)
 	return st[n]
 
@@ -78,7 +78,7 @@ def callSquad(member):
 		s = s + "<@" + str(i) + "> "
 	if flag == False:
 		return "You are not authorised to execute this command..."
-	s = s + "<@" + str(member.id) + "> is calling you... "
+	s = s + " come, " "<@" + str(member.id) + "> is calling you... "
 	s = s + randomize()
 	return s
 
