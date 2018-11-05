@@ -4,6 +4,7 @@ from discord.ext.commands import Bot
 from discord.ext import commands
 import asyncio
 import os
+import random
 
 Client = discord.Client()
 client = commands.Bot(command_prefix = "!")
@@ -58,6 +59,12 @@ async def on_message(message):
 		await message.channel.send("Members "+ str(a))
 		await message.channel.send("Bots "+ str(b))
 
+def randomize():
+	st = ["Let's have chicken dinner...", "Let's go...", "The opportunity of defeating the enemy is provided by the enemy himself...", "Gather around...", "Stay alert..."]
+	n = random.randint(0,len(st)-1)
+	return st[n]
+
+
 
 def callSquad(member):
 	s = ""
@@ -71,7 +78,8 @@ def callSquad(member):
 		s = s + "<@" + str(i) + "> "
 	if flag == False:
 		return "You are not authorised to execute this command..."
-	s = s + "Let's have chicken dinner..."
+	s = s + "<@" + str(member.id) + "> is calling you... "
+	s = s + randomize()
 	return s
 
 
