@@ -19,6 +19,8 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
+	tppsquad = [340029411145416707, 430425824118833162, 466270095497363496, 488707015921893377, 444780058888896527]
+	fppsquad = [466270095497363496, 428543156242481152, 455039811791749130, 463002393617891338, 430425824118833162, 483990246825132053]
 	member = message.author
 	user = client.get_user(member.id)
 	if message.content == "cookie":
@@ -32,8 +34,11 @@ async def on_message(message):
 	elif message.content.startswith("!say "):
 		args = message.content.split(" ")
 		await message.channel.send(" ".join(args[1:]))
-	elif message.content == "!call":
-		st = callSquad(member)
+	elif message.content == "!calltpp":
+		st = callSquad(member,tppsquad)
+		await message.channel.send(st)
+	elif message.content == "!callfpp":
+		st = callSquad(member,fppsquad)
 		await message.channel.send(st)
 	elif message.content == "!allmembers":
 		x = message.guild.members
@@ -67,16 +72,16 @@ async def on_message(message):
 
 
 def randomize():
-	st = ["Let's have chicken dinner...", "Let's go...", "The opportunity of defeating the enemy is provided by the enemy himself...", "Gather around...", "Stay alert...", "Charge...", "There can only be one WINNER..."]
+	st = ["Let's have chicken dinner...", "Let's go...", "The opportunity of defeating the enemy is provided by the enemy himself...", "Gather around...", "Stay alert...", "Charge...", "There can only be one WINNER...", "Enemies ahead..."]
 	n = random.randint(0,len(st)-1)
 	return st[n]
 
 
 
-def callSquad(member):
+def callSquad(member, squad):
 	s = ""
 	flag = False
-	squad = [466270095497363496,428543156242481152,455039811791749130,463002393617891338,430425824118833162]
+	# squad = [466270095497363496,428543156242481152,455039811791749130,463002393617891338,430425824118833162]
 	for i in squad:
 		# print(i)
 		if member.id == i:
