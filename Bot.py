@@ -66,7 +66,7 @@ async def on_message(message):
 			else:
 				a = a + 1
 		s = "\n"
-		s = s + "Total strength " + "\n" + str(a+b) + "Members " + str(a) + "\n" + "Bots " + str(b)
+		s = s + "Total strength " + str(a+b) + "\n" + "Members " + str(a) + "\n" + "Bots " + str(b)
 		await message.channel.send(s)
 
 
