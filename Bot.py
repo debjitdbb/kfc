@@ -18,6 +18,16 @@ async def on_ready():
 
 
 @client.event
+async def on_member_join(member):
+    if member.dm_channel is None:
+        await member.create_dm()
+    dmchannel = member.dm_channel
+    await dmchannel.send("https://cdn.discordapp.com/attachments/467741161910435852/513031345329405973/IMG-20181116-WA0019.jpg")
+    await dmchannel.send("Please go through the first PINNED message on match-info channel and post any doubts(if you have any) on that channel itself.")
+
+
+
+@client.event
 async def on_message(message):
 	tppsquad = [340029411145416707, 430425824118833162, 466270095497363496, 488707015921893377, 444780058888896527]
 	fppsquad = [466270095497363496, 428543156242481152, 455039811791749130, 463002393617891338, 430425824118833162, 483990246825132053]
