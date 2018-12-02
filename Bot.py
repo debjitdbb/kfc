@@ -74,7 +74,7 @@ async def on_message(message):
 	elif message.content == "!send":
 		servers = client.guilds
 		for i in servers:
-			await message.channel.send(i.id + " " + i.name)
+			await message.channel.send(i.name)
 
 
 
