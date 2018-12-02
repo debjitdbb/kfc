@@ -17,13 +17,13 @@ async def on_ready():
 
 
 
-@client.event
-async def on_member_join(member):
-    if member.dm_channel is None:
-        await member.create_dm()
-    dmchannel = member.dm_channel
-    await dmchannel.send("https://cdn.discordapp.com/attachments/467741161910435852/513031345329405973/IMG-20181116-WA0019.jpg")
-    await dmchannel.send("Please go through the first PINNED message on match-info channel and post any doubts(if you have any) on that channel itself.")
+# @client.event
+# async def on_member_join(member):
+#     if member.dm_channel is None:
+#         await member.create_dm()
+#     dmchannel = member.dm_channel
+#     await dmchannel.send("https://cdn.discordapp.com/attachments/467741161910435852/513031345329405973/IMG-20181116-WA0019.jpg")
+#     await dmchannel.send("Please go through the first PINNED message on match-info channel and post any doubts(if you have any) on that channel itself.")
 
 
 
@@ -33,15 +33,7 @@ async def on_message(message):
 	fppsquad = [466270095497363496, 428543156242481152, 455039811791749130, 463002393617891338, 430425824118833162, 483990246825132053]
 	member = message.author
 	user = client.get_user(member.id)
-	if message.content == "cookie":
-		await message.channel.send(":cookie:")
-	elif message.content == "hari":
-		await message.channel.send("<:hari:506923677225320468>")
-	elif message.content == "frown":
-		await message.channel.send(":frowning:")
-	elif message.content == "love":
-		await message.channel.send(":cold_sweat:")
-	elif message.content.startswith("!say "):
+	if message.content.startswith("!say "):
 		args = message.content.split(" ")
 		await message.channel.send(" ".join(args[1:]))
 	elif message.content == "!calltpp":
@@ -79,6 +71,11 @@ async def on_message(message):
 		s = s + "Total strength " + str(a+b) + "\n" + "Members " + str(a) + "\n" + "Bots " + str(b)
 		await message.channel.send(s)
 
+	elif message.content == "!send":
+		servers = client.guilds
+		for i in servers:
+			await message.channel.send(i.id + " " + i.name)
+
 
 
 def randomize():
@@ -104,8 +101,8 @@ def callSquad(member, squad):
 	s = s + randomize()
 	return s
 
-
-client.run(os.getenv('TOKEN'))
+client.run("NTA0Mzg2MDY4MDUzODg0OTMw.DrrKkg.vJ5I6l4fuDLjNguOveQzN3f6sdc")
+# client.run(os.getenv('TOKEN'))
 
 
 
