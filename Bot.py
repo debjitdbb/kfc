@@ -92,8 +92,7 @@ def callSquad(member, squad):
 	s = s + randomize()
 	return s
 
-client.run("NTA0Mzg2MDY4MDUzODg0OTMw.DrrKkg.vJ5I6l4fuDLjNguOveQzN3f6sdc")
-# client.run(os.getenv('TOKEN'))
+client.run(os.getenv('TOKEN'))
 
 
 
