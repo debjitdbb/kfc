@@ -65,7 +65,7 @@ async def on_message(message):
 			await message.channel.send(i.name)
 
 	elif message.content == "!news":
-		message.channel.send("Admin is a hacker. He got banned!!!")
+		await message.channel.send("Admin is a hacker. He got banned!!!")
 
 
 
@@ -91,6 +91,8 @@ def callSquad(member, squad):
 	s = s + " come, " "<@" + str(member.id) + "> is calling you... "
 	s = s + randomize()
 	return s
+
+
 
 client.run(os.getenv('TOKEN'))
 
