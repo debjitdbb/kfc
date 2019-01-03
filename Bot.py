@@ -15,18 +15,6 @@ async def on_ready():
 	game = discord.Game(name = "in Erangel")
 	await client.change_presence(status=discord.Status.idle, activity=game)
 
-
-
-# @client.event
-# async def on_member_join(member):
-#     if member.dm_channel is None:
-#         await member.create_dm()
-#     dmchannel = member.dm_channel
-#     await dmchannel.send("https://cdn.discordapp.com/attachments/467741161910435852/513031345329405973/IMG-20181116-WA0019.jpg")
-#     await dmchannel.send("Please go through the first PINNED message on match-info channel and post any doubts(if you have any) on that channel itself.")
-
-
-
 @client.event
 async def on_message(message):
 	tppsquad = [340029411145416707, 430425824118833162, 466270095497363496, 488707015921893377, 444780058888896527]
@@ -75,6 +63,9 @@ async def on_message(message):
 		servers = client.guilds
 		for i in servers:
 			await message.channel.send(i.name)
+
+	elif message.content == "!news":
+		message.channel.send("Admin is a hacker. He got banned!!!")
 
 
 
