@@ -67,6 +67,13 @@ async def on_message(message):
 	elif message.content == "!news":
 		await message.channel.send("Admin is a hacker. He got banned!!!")
 
+	for i in range(1):
+		if message.content.startswith("!p"):
+			if message.channel.id != 468476997186879489:
+				await message.delete()
+				await message.channel.send("Please use the #music channel to play music henceforth...")
+
+
 
 
 def randomize():
